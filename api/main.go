@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/Raghavendra-S-I/URL_Shorten_Fiber_Redis/routes"
-	"github.com/gofiber/fiber"
+	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/joho/godotenv"
 )
@@ -21,7 +21,7 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	app := fiber.New{}
+	app := fiber.New()
 
 	app.Use(logger.New)
 

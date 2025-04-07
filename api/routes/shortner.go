@@ -9,7 +9,7 @@ import (
 	"github.com/Raghavendra-S-I/URL_Shorten_Fiber_Redis/helpers"
 	"github.com/asaskevich/govalidator"
 	"github.com/go-redis/redis"
-	"github.com/gofiber/fiber"
+	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
 )
 
@@ -72,7 +72,7 @@ func ShortenURL(c *fiber.Ctx) error {
 
 	//enforce https,SSL
 
-	body.URL = helpers.EnforceHTTP()
+	body.URL = helpers.EnforceHTTP(body.URL)
 
 	var id string
 
